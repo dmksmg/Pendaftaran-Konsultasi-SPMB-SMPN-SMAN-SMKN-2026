@@ -25,6 +25,7 @@ import FormField from './components/FormField';
 import StepIndicator from './components/StepIndicator';
 import SuccessModal from './components/SuccessModal';
 import CheckStatusModal from './components/CheckStatusModal';
+import DayaTampungModal from './components/DayaTampungModal';
 
 // URL Google Apps Script yang sudah dideploy
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwmt21box6T9w0OeO8FifXzs9H-yt3qtoEBAt1HCrh5gL7KYE6RO6QbHI3owzW9wgY6/exec';
@@ -97,6 +98,7 @@ function App() {
   const [fetchAttempt, setFetchAttempt] = useState(0);
   const [usedFallback, setUsedFallback] = useState(false);
   const [showCheckStatus, setShowCheckStatus] = useState(false);
+  const [showDayaTampung, setShowDayaTampung] = useState(false);
   const MAX_FETCH_RETRIES = 2;
   const [formData, setFormData] = useState<FormData>({
     namaSiswa: '',
@@ -444,6 +446,15 @@ function App() {
                 Cek Status Konsultasi
               </button>
             </div>
+
+              <div className="flex justify-center mb-6">
+                <button
+                  onClick={() => setShowDayaTampung(true)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-2xl border border-white/20 hover:bg-white/20 transition"
+                >
+                  Daya Tampung
+                </button>
+              </div>
 
             
           </div>
@@ -808,6 +819,7 @@ function App() {
 
       {/* Success Modal */}
       <CheckStatusModal isOpen={showCheckStatus} onClose={() => setShowCheckStatus(false)} scriptUrl={SCRIPT_URL} />
+      <DayaTampungModal isOpen={showDayaTampung} onClose={() => setShowDayaTampung(false)} />
       <SuccessModal
         isOpen={showSuccess}
         onClose={handleCloseSuccess}
