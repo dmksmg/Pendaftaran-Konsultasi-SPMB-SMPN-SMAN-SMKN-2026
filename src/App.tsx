@@ -587,7 +587,7 @@ function App() {
                   <FormField
                     label="Nomor WhatsApp Siswa"
                     name="whatsappSiswa"
-                    placeholder="Contoh: 08123456789"
+                    placeholder="Contoh: 8123456789"
                     value={formData.whatsappSiswa}
                     onChange={handleChange}
                     icon={<Phone className="w-5 h-5" />}
@@ -622,7 +622,7 @@ function App() {
                   <FormField
                     label="Nomor WhatsApp Orang Tua"
                     name="whatsappOrangTua"
-                    placeholder="Contoh: 08129876543"
+                    placeholder="Contoh: 8129876543"
                     value={formData.whatsappOrangTua}
                     onChange={handleChange}
                     icon={<Phone className="w-5 h-5" />}
